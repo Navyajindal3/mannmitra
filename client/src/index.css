@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* your custom utilities */
+/* Hide scrollbar but keep scrolling */
+html, body {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari/Webkit */
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+@keyframes breathe {
+  0% { transform: scale(1); opacity: 0.8; }
+  25% { transform: scale(1.2); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.9; }
+  75% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.breathe-circle {
+  animation: breathe 12s infinite ease-in-out;
+}
+
